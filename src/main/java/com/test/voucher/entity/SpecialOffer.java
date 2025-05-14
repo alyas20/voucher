@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "RECIPIENT01")
+@Table(name = "SPECIAL_OFFER01")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Recipient {
+public class SpecialOffer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,6 @@ public class Recipient {
     @Column(name = "name", nullable = false, length = 50)
     private String name;
 
-    @Column(name = "email", nullable = false, length = 20)
-    private String email;
+    @Column(name = "fix_percent_discount", nullable = false, length = 2)
+    private Integer fixPercentDisc;
 }
