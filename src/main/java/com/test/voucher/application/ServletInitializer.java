@@ -1,5 +1,6 @@
 package com.test.voucher.application;
 
+import com.test.voucher.VoucherApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

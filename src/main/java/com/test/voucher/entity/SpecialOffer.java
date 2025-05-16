@@ -21,5 +21,5 @@ public class SpecialOffer {
     private String name;
 
     @Column(name = "fix_percent_discount", nullable = false, length = 2)
-    private Integer fixPercentDisc;
+    private Integer fixedPercentDiscount;
 }

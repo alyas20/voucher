@@ -6,9 +6,9 @@ import com.test.voucher.dto.VoucherResponse;
 import java.util.List;
 
 public interface VoucherService {
-    VoucherResponse generateVoucher(VoucherRequest voucherRequest);
+    void generateVoucher(VoucherRequest voucherRequest);
 
-    VoucherResponse validateVoucher(VoucherRequest voucherRequest);
+    VoucherResponse validateVoucher(String voucherCode,String email);
 
     List<VoucherResponse> getValidVouchersByEmail(String email);
 }
