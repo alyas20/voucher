@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class VoucherServiceImpl implements  VoucherService{
@@ -73,7 +72,7 @@ public class VoucherServiceImpl implements  VoucherService{
             return new VoucherResponse(false, null, "Voucher code not belong to this email", null, null);
          }
 
-        if(voucher.getExpDate() != null && voucher.getExpDate().after(now)){
+        if(voucher.getExpDate() != null && voucher.getExpDate().before(now)){
             return new VoucherResponse(false, null, "Voucher is expired", null, null);
         }
 

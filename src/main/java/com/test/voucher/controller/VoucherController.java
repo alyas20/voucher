@@ -31,6 +31,7 @@ public class VoucherController {
             voucherService.generateVoucher(request);
         } catch (Exception e) {
             logger.error("ERROR API /generate :: {}", e.getMessage());
+            return ResponseEntity.ok("Request Has Been Failed Error: "+ e.getMessage());
         }
         return ResponseEntity.ok("Request Has Been Success");
     }

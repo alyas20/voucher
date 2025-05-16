@@ -20,6 +20,6 @@ public class Recipient {
     @Column(name = "name", nullable = false, length = 50)
     private String name;
 
-    @Column(name = "email", nullable = false, length = 20, unique = true)
+    @Column(name = "email", nullable = false, length = 50, unique = true)
     private String email;
 }
