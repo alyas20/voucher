@@ -4,20 +4,25 @@ import com.test.voucher.entity.Recipient;
 import com.test.voucher.entity.SpecialOffer;
 import com.test.voucher.repository.RecipientRepo;
 import com.test.voucher.repository.SpecialOfferRepo;
-import com.test.voucher.repository.VoucherRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    @Autowired
-    private VoucherRepo voucherRepo;
-    @Autowired
-    private RecipientRepo recipientRepo;
-    @Autowired
-    private SpecialOfferRepo specialOfferRepo;
+    private final SpecialOfferRepo specialOfferRepo;
+    private final RecipientRepo recipientRepo;
+
+    /**
+     * Constructor-based dependency injection for better testability and immutability.
+     *
+     * @param specialOfferRepo The repository for special offers.
+     * @param recipientRepo The repository for recipients.
+     */
+    public DataLoader(SpecialOfferRepo specialOfferRepo, RecipientRepo recipientRepo) {
+        this.specialOfferRepo = specialOfferRepo;
+        this.recipientRepo = recipientRepo;
+    }
 
     @Override
     public void run(String... args) throws Exception {

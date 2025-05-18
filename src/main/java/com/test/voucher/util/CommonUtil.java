@@ -7,6 +7,10 @@ import java.util.Date;
 
 public class CommonUtil {
 
+    private CommonUtil() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static Date convertStringToDate(String dateString) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(dateString, formatter);
